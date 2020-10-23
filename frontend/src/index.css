@@ -2,6 +2,15 @@ main {
   min-height: 80vh;
 }
 
+/* space between icon and name in top nav */
 .ml-auto i {
   padding-right: 0.5rem;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+.rating span {
+  margin: 0.1rem;
 }
