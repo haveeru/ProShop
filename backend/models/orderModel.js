@@ -1,9 +1,9 @@
-import mongoos from 'mongoose';
+import mongoose from 'mongoose';
 
-const orderShema = mongoos.Schema(
+const orderSchema = mongoose.Schema(
   {
     user: {
-      type: mongoos.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       //ref add relationship between user and product
       ref: 'User',
