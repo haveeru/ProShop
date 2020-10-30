@@ -10,9 +10,8 @@ router.get(
   '/',
   asyncHandler(async (req, res) => {
     const products = await Product.find({});
-
     res.json(products);
-  }) 
+  })
 );
 
 // @desc    Fetch single product
