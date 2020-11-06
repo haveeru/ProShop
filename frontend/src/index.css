@@ -24,3 +24,7 @@ h3 {
 .rating span {
   margin: 0.1rem;
 }
+
+.form-group input {
+  background-color: #eee;
+}
