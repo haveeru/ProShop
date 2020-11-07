@@ -4,6 +4,7 @@ import {
   authUser,
   getUserProfile,
   registerUser,
+  updateUserProfile,
 } from '../controllers/userController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
@@ -11,6 +12,9 @@ router.route('/').post(registerUser);
 // /login hooked to /api/users
 router.post('/login', authUser);
 // protect middleware is inserted as first argument of get method
-router.route('/profile').get(protect, getUserProfile);
+router
+  .route('/profile')
+  .get(protect, getUserProfile)
+  .put(protect, updateUserProfile);
 
 export default router;
