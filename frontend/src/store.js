@@ -11,6 +11,7 @@ import {
   userLoginReducer,
   userRegisterReducer,
   userDetailsReducer,
+  userUpdateProfileReducer,
 } from './reducers/userReducers';
 
 const reducer = combineReducers({
@@ -20,6 +21,7 @@ const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
 });
 
 // localStorage.getItem returns a string it has to be parsed
@@ -32,8 +34,16 @@ const userInfoFromStorage = localStorage.getItem('userInfo')
     JSON.parse(localStorage.getItem('userInfo'))
   : null;
 
+const shippingFromStorage = localStorage.getItem('shippingAddress')
+  ? //string hast to be parsed as json
+    JSON.parse(localStorage.getItem('shippingAddress'))
+  : {};
+
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage },
+  cart: {
+    cartItems: cartItemsFromStorage,
+    shippingAddress: shippingFromStorage,
+  },
   userLogin: { userInfo: userInfoFromStorage },
 };
 
